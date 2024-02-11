@@ -168,6 +168,12 @@ public class ContourPipeline2_6_Yellow_4Red extends OpenCvPipeline {
         telemetry.update();
         return workingMatrix;
 
+       // This is where we would call release for the matrices that were created and no longer needed
+       workingMatrix.release();
+       matLeft.release();
+       matCenter.release();
+       matRight.release();
+
     }
 
     public String getLocation() {
